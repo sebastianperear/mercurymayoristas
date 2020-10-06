@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Web Mayorista Mercury') }}</title>
+    <title>Mercury</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -18,9 +18,16 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    
+
+    
+            
 </head>
 <link href='https://fonts.googleapis.com/css?family=Abel:300,400,700' rel='stylesheet' type='text/css'>
-<link href='https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>    
+<link href='https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">    
 
 <body>
 
@@ -61,7 +68,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                   Hola, {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -95,33 +102,77 @@
                 <a href="#" id="navbarIluminacionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Iluminación<b class="caret"></b></a>
                 <ul class="dropdown-menu multi-column columns-2">
                     <div class="row">
+                       
                         <div class="col-sm-6">
+                            
+                          
                             <ul class="multi-column-dropdown">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
+
+                                <li><a href="#">Iluminación solar</a></li>
+                                <li><a href="#">Páneles y balas led</a></li>
                                 <li class="rdivider"></li>
-                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">Reflectores led y alumbrado público</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="#">Bombillos led</a></li>
+                                <li><a href="#">Tubos y lamparas led</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-6">
+
                             <ul class="multi-column-dropdown">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
+                                <li><a href="#">Decoración led</a></li>
+                                <li><a href="#">Linternas y emergencias</a></li>
+                                <li><a href="#">Cinta led y accesorios</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="#">Sensores y fotoceldas</a></li>
+                                
                             </ul>
                         </div>
                     </div>
                 </ul>
             </li>
+            <li class=" nav-item dropdown">
+                <a href="#" id="navbarIluminacionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Eléctricos<b class="caret"></b></a>
+                <ul class="dropdown-menu multi-column columns-2">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="multi-column-dropdown">
+                                <li><a href="#">Multitomas y extensiones</a></li>
+                                <li><a href="#">Accesorios eléctricos</a></li>
+                                <li class="rdivider"></li>
+                                <li><a href="#">Toma corrientes y interruptores</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Lineas premium</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="multi-column-dropdown">
+                                <li><a href="#">Timbres</a></li>
+                                <li><a href="#">Cintas aislantes</a></li>
+                                <li><a href="#">Manufacturas plasticas</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Ventilación y extractores</a></li>
+                                <li class="divider"></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarIluminacionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Innovación y tecnología
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarIluminacionMenuLink">
+                 <div class="dropdown-row">
+                  <a class="dropdown-item" href="#">Smart Home</a>
+                  </div>
+                </div>
+              </li>
+            
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarIluminacionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Iluminación
+                  Ferretería
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarIluminacionMenuLink">
 
@@ -142,31 +193,97 @@
                   </div>
                 </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown link
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
+             
+              
             </ul>
           </div>
 
           </div>
         </nav>
-                @yield('slide')
+
+                    @yield('slide')
+                
+                
                 <main class="py-4">
                     @yield('content')
                 </main>
             </div>
         </body>
+
+        <footer>
+ <div class="container">
+   <div class="row">
+   
+            <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
+                <ul class="adress">
+                     <img src="/img/logo1.png" style="width:55%;"></img>    
+                     <li>
+                        <p>Lorem ipsum dolor sit amet, vero omnis vocibus</p>
+                      </li>
+                           
+                      <li>
+                        <p>+90 1234 56789</p>
+                      </li>
+                           
+                      <li>
+                        <p>info@gmail.com</p>
+                      </li>
+                 </ul>
+            </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <ul class="contact">
+                     <span>Contact</span>    
+                     <li>
+                        <a href="#">Home</a>
+                      </li>
+                           
+                      <li>
+                         <a href="#">About</a>
+                      </li>
+                           
+                      <li>
+                        <a href="#">Blog</a>
+                      </li>
+                           
+                      <li>
+                         <a href="#">Gallery </a>
+                      </li>
+                           
+                      <li>
+                        <a href="#">Contact</a>
+                     </li>
+                </ul>
+            </div>
+       
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+               <ul class="social">
+                          <span>Social</span>    
+                           <li>
+                                <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                           </li>
+                          
+                           <li>
+                                <a href="#"><i class="fa fa-github fa-2x"></i></a>
+                           </li>
+                            
+                           <li>
+                                <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+                           </li>
+                           
+                           <li>
+                                <a href="#"><i class="fa fa-tumblr fa-2x"></i></a>
+                           </li>
+                            
+                           <li>
+                                <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+                          </li>
+                          
+                 </ul>
+            </div>
+       
+       
+       </div> 
+    </div>
+</footer>
 </html>

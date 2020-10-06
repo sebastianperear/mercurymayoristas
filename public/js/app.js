@@ -39164,10 +39164,10 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
+  return _c("div", { staticClass: "100" }, [
     _c(
       "div",
-      { staticClass: "col-md-12" },
+      {},
       [_c("carousel", { attrs: { data: _vm.data } }), _vm._v(" "), _vm._m(0)],
       1
     )

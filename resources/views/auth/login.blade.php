@@ -66,7 +66,7 @@ img {
   position: relative;
   height: 100vh;
   width: 1194px;
-  background: url("/img/login/INGRESO1.png") no-repeat center center scroll;
+  background: url("/img/login/login.png") no-repeat center center scroll;
   background-size: cover;
   float: left;
   -webkit-animation: bgslide 2.3s forwards;
@@ -405,6 +405,7 @@ img {
       <div class="container">
         <div class="div-logo">
           <img src="/img/login/logo.png" alt="logo" style="width:70%;">
+          <img src="/img/login/slogan.png" alt="logo" style="width:70%;">
         </div>
         
     

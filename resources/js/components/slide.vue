@@ -1,7 +1,7 @@
 <template>
 
-        <div class="row">
-            <div class="col-md-12">
+        <div class="100">
+            <div class="">
               <carousel :data="data"></carousel>
               <div class="container">
                 <div class="card">
