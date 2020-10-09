@@ -32,4 +32,39 @@ Vue.component('slide', require('./components/slide.vue').default);
 
 const app = new Vue({
     el: '#app',
+
+    data:{
+      tickets: [],
+      newAsunto: '',
+      newPrioridad: '',
+      newMensaje: '',
+      
+
+    },
+
+    methods:{
+
+      
+      createTicket : function(){
+       
+        var url = 'tickets';
+        axios.post(url , {
+          asunto: this.newAsunto,
+          prioridad: this.newPrioridad,
+          mensaje: this.newMensaje
+
+        }).then(response => {
+          
+          this.newAsunto = '';
+          this.newPrioridad = '';
+          this.newMensaje = '';
+          
+          $('#create').modal('hide');
+          toastr.success('Se ha creado un nuevo contacto con éxito', '¡Perfecto!');
+          
+
+
+        })
+      }
+    }
 });

@@ -1,6 +1,8 @@
   <!DOCTYPE html>
   <html>
   <head>
+
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
       <title></title>
 
       <style type="text/css">
@@ -413,9 +415,9 @@ img {
 
           <form method="POST" action="{{ route('login') }}">
             @csrf
-            <input type="email" placeholder="Correo electrónico" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+            <input type="number" placeholder="Identificación" class="form-control @error('identificacion') is-invalid @enderror" name="identificacion"  min="1" value="{{ old('identificacion') }}" required autocomplete="identificacion" autofocus>
 
-              @error('email')
+              @error('identificacion')
                   <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                   </span>

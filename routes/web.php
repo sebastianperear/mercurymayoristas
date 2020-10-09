@@ -21,3 +21,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('/tickets', 'TicketsController', ['except' => 'show', 'create', 'edit']);
+
+

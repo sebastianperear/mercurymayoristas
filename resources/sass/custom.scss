@@ -85,10 +85,10 @@
 
 
 /* Footer */
- footer{
-     background-color: #f8f8f8;
-     padding:70px 0px;
-}          
+footer {
+    background-color: #f8f8f8;
+    padding: 20px 0px;
+}        
 
 footer ul li{
     padding:5px 0px;
@@ -125,4 +125,46 @@ footer ul li{
     margin-right: 15px;
     font-size:14px;
 }
+
+.footer-copyright.text-center.py-3 {
+    background-color: #fed700;
+}
+
+.footer-slogan
+{
+    font-family: Helvetica Neue, Cursive;
+}
+
+.footer-slogan {
+    font-family: Bebas Neue, cursive;
+}
+
+.footer-title{
+    font-family: Bebas Neue, cursive;
+
+}
+
+.footer-subtitle{
+    font-size: 1.1em !important;
+    
+}
+
+
+
 /* Footer .end */
+
+/* Remove Arrows number login */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Remove Arrow .end */

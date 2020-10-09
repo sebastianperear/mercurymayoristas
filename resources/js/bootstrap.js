@@ -1,3 +1,4 @@
+window.toastr = require('toastr');
 window._ = require('lodash');
 
 /**

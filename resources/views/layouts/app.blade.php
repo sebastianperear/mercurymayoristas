@@ -15,7 +15,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    <!-- Favicon -->
+     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Compiled and minified CSS -->
@@ -207,7 +208,11 @@
                 <main class="py-4">
                     @yield('content')
                 </main>
+
+                @include('tickets.create')
             </div>
+
+            
         </body>
 
         <footer>
@@ -218,36 +223,46 @@
                 <ul class="adress">
                      <img src="/img/logo1.png" style="width:55%;"></img>    
                      <li>
-                        <p>Lorem ipsum dolor sit amet, vero omnis vocibus</p>
+                        <p class="footer-slogan">Los mejores productos, siempre</p>
+                      </li>
+                        <li>
+                          <span class="footer-subtitle">¿Necesitas ayuda?</span>
+                          <a href="#" class="btn btn-outline-success pull-left" data-toggle="modal" data-target="#create">
+                             Crear Ticket
+                          </a>
+                        </li>
+                        <li>
+                          
+                        </li>
+                      <br>
+                      <hr>
+                      <li>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i>+57 321 304 8303</p>
                       </li>
                            
                       <li>
-                        <p>+90 1234 56789</p>
-                      </li>
-                           
-                      <li>
-                        <p>info@gmail.com</p>
+                        <p><i class="fa fa-envelope fa-1x"></i> hola@grupomercury.com.co</p>
                       </li>
                  </ul>
             </div>
             
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <ul class="contact">
-                     <span>Contact</span>    
+                     <span class="footer-title">Familias</span>    
                      <li>
-                        <a href="#">Home</a>
+                        <a href="#">Iluminación</a>
                       </li>
                            
                       <li>
-                         <a href="#">About</a>
+                         <a href="#">Eléctricos</a>
                       </li>
                            
                       <li>
-                        <a href="#">Blog</a>
+                        <a href="#">Innovación y tecnologia</a>
                       </li>
                            
                       <li>
-                         <a href="#">Gallery </a>
+                         <a href="#">Ferretería</a>
                       </li>
                            
                       <li>
@@ -258,25 +273,19 @@
        
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
                <ul class="social">
-                          <span>Social</span>    
+                          <span class="footer-title">Síguenos en:</span>    
                            <li>
                                 <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
                            </li>
                           
-                           <li>
-                                <a href="#"><i class="fa fa-github fa-2x"></i></a>
-                           </li>
+                           
                             
                            <li>
                                 <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
                            </li>
-                           
+
                            <li>
-                                <a href="#"><i class="fa fa-tumblr fa-2x"></i></a>
-                           </li>
-                            
-                           <li>
-                                <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+                                <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
                           </li>
                           
                  </ul>
@@ -285,5 +294,10 @@
        
        </div> 
     </div>
+
 </footer>
+<!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright: GRUPO EMPRESARIAL MERCURY S.A.S - TIC
+  </div>
+  <!-- Copyright -->
 </html>
