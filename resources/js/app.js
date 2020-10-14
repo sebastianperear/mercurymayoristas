@@ -60,7 +60,7 @@ const app = new Vue({
           this.newMensaje = '';
           
           $('#create').modal('hide');
-          toastr.success('Se ha creado un nuevo contacto con éxito', '¡Perfecto!');
+          toastr.success('Pronto nos pondremos en contacto contigo', 'Se ha creado un nuevo ticket');
           
 
 

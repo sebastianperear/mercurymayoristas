@@ -20,6 +20,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Compiled and minified CSS -->
+    <link href="{{ asset('css/toastr.css') }}" rel="stylesheet">
     
 
     
@@ -77,6 +78,14 @@
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Cerrar sesión') }}
+                                    </a>
+
+                                    <a class="dropdown-item" href="#">
+                                        {{ __('Administra tu perfil') }}
+                                    </a>
+
+                                    <a class="dropdown-item" href="#">
+                                        {{ __('Mercury Elite') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

@@ -3,15 +3,7 @@
         <div class="100">
             <div class="">
               <carousel :data="data"></carousel>
-              <div class="container">
-                <div class="card">
-                    <div class="card-header">Example Component 2</div>
-
-                    <div class="card-body">
-                      asdasd
-                    </div> 
-                </div>
-            </div>
+              
           </div>
         </div>
     
