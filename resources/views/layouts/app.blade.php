@@ -29,7 +29,8 @@
 <link href='https://fonts.googleapis.com/css?family=Abel:300,400,700' rel='stylesheet' type='text/css'>
 <link href='https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">    
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"> 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/regular.min.css" rel="stylesheet">
 
 <body>
 
@@ -109,7 +110,7 @@
             
             <ul class="navbar-nav">
               <li class=" nav-item dropdown">
-                <a href="#" id="navbarIluminacionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Iluminación<b class="caret"></b></a>
+                <a href="#" id="navbariluminacionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Iluminación<b class="caret"></b></a>
                 <ul class="dropdown-menu multi-column columns-2">
                     <div class="row">
                        
@@ -119,22 +120,22 @@
                             <ul class="multi-column-dropdown">
 
                                 <li><a href="#">Iluminación solar</a></li>
-                                <li><a href="#">Páneles y balas led</a></li>
+                                <li><a href="/categoria/ILUMINACION/PANELES%20Y%20BALAS%20LED">Páneles y balas led</a></li>
                                 <li class="rdivider"></li>
-                                <li><a href="#">Reflectores led y alumbrado público</a></li>
+                                <li><a href="/categoria/ILUMINACION/REFLECTORES%20LED%20Y%20ALUMBRADO%20PUBLICO">Reflectores led y alumbrado público</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Bombillos led</a></li>
-                                <li><a href="#">Tubos y lamparas led</a></li>
+                                <li><a href="/categoria/ILUMINACION/BOMBILLOS%20LED">Bombillos led</a></li>
+                                <li><a href="/categoria/ILUMINACION/TUBOS%20Y%20LAMPARAS%LED">Tubos y lamparas led</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-6">
 
                             <ul class="multi-column-dropdown">
-                                <li><a href="#">Decoración led</a></li>
-                                <li><a href="#">Linternas y emergencias</a></li>
-                                <li><a href="#">Cinta led y accesorios</a></li>
+                                <li><a href="/categoria/ILUMINACION/DECORACION%20LED">Decoración led</a></li>
+                                <li><a href="/categoria/ILUMINACION/LINTERNAS%20Y%20EMERGENCIAS">Linternas y emergencias</a></li>
+                                <li><a href="/categoria/ILUMINACION/CINTA%20LED%20Y%20ACCESORIOS">Cinta led y accesorios</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Sensores y fotoceldas</a></li>
+                                <li><a href="/categoria/ILUMINACION/SENSORES%20Y%20FOTOCELDAS">Sensores y fotoceldas</a></li>
                                 
                             </ul>
                         </div>
@@ -142,26 +143,26 @@
                 </ul>
             </li>
             <li class=" nav-item dropdown">
-                <a href="#" id="navbarIluminacionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Eléctricos<b class="caret"></b></a>
+                <a href="#" id="navbariluminacionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Eléctricos<b class="caret"></b></a>
                 <ul class="dropdown-menu multi-column columns-2">
                     <div class="row">
                         <div class="col-sm-6">
                             <ul class="multi-column-dropdown">
-                                <li><a href="#">Multitomas y extensiones</a></li>
-                                <li><a href="#">Accesorios eléctricos</a></li>
+                                <li><a href="/categoria/ILUMINACION/MULTITOMAS%20Y%20EXTENSIONES">Multitomas y extensiones</a></li>
+                                <li><a href="/categoria/ILUMINACION/ACCESORIOS%20ELECTRICOS">Accesorios eléctricos</a></li>
                                 <li class="rdivider"></li>
-                                <li><a href="#">Toma corrientes y interruptores</a></li>
+                                <li><a href="/categoria/ILUMINACION/TOMA%20CORRIENTES%20Y%20INTERRUPTORES">Toma corrientes y interruptores</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Lineas premium</a></li>
+                                <li><a href="/categoria/ILUMINACION/LINEAS%20PREMIUM">Lineas premium</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-6">
                             <ul class="multi-column-dropdown">
-                                <li><a href="#">Timbres</a></li>
-                                <li><a href="#">Cintas aislantes</a></li>
-                                <li><a href="#">Manufacturas plasticas</a></li>
+                                <li><a href="/categoria/ILUMINACION/TIMBRES">Timbres</a></li>
+                                <li><a href="/categoria/ILUMINACION/PANELES%20Y%20BALAS%20LED">Cintas aislantes</a></li>
+                                <li><a href="/categoria/ILUMINACION/MANUFACTURAS%20PLASTICAS">Manufacturas plasticas</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Ventilación y extractores</a></li>
+                                <li><a href="/categoria/ILUMINACION/VENTILACION%20Y%20EXTRACTORES">Ventilación y extractores</a></li>
                                 <li class="divider"></li>
                                 
                             </ul>
@@ -170,10 +171,10 @@
                 </ul>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarIluminacionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbariluminacionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Innovación y tecnología
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarIluminacionMenuLink">
+                <div class="dropdown-menu" aria-labelledby="navbariluminacionMenuLink">
                  <div class="dropdown-row">
                   <a class="dropdown-item" href="#">Smart Home</a>
                   </div>
@@ -181,10 +182,10 @@
               </li>
             
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarIluminacionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbariluminacionMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Ferretería
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarIluminacionMenuLink">
+                <div class="dropdown-menu" aria-labelledby="navbariluminacionMenuLink">
 
                  <div class="dropdown-row">
 

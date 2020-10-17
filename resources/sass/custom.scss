@@ -1,6 +1,35 @@
 
 /* CUSTOM CSS */
 
+
+
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 8.5px;
+ overflow: hidden;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e2bf00; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ceae01; 
+
+}
+
+/* Scrollbar .end */
 /* Container * */
 
 @media (min-width: 1200px){
@@ -233,3 +262,30 @@ i.fa.fa-shopping-cart {
     padding-top: 3rem;
 }
 /* Banners .end*/
+
+/*Product page */
+
+
+.product-image {
+    width: 90%;
+}
+
+img.pic-1 {
+    width: 100%;
+}
+
+.product-content-page {
+    margin-top: 3em;
+}
+
+.price-page p {
+    color: #FED700;
+    font-size: 2em !important;
+}
+
+i.fa.fa-shopping-cart {
+    color: white;
+}
+/*Product Page .end */
+
+
