@@ -4,6 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+
 import VueCarousel from '@chenfengyuan/vue-carousel';
 require('./bootstrap');
 
@@ -30,21 +31,33 @@ Vue.component('slide', require('./components/slide.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
 
-    data:{
+
+
+
+const app = new Vue({
+  
+    el: '#app',
+    prop: ['l'],
+       
+      data:{
+
       tickets: [],
       newAsunto: '',
       newPrioridad: '',
       newMensaje: '',
+
       
+      carts: [],
+      newPrecio: '',
+      newCantidad: 1,
 
     },
 
-    methods:{
+    
 
-      
+    methods:{
+        
       createTicket : function(){
        
         var url = 'tickets';
@@ -61,6 +74,29 @@ const app = new Vue({
           
           $('#create').modal('hide');
           toastr.success('Pronto nos pondremos en contacto contigo', 'Se ha creado un nuevo ticket');
+          
+
+
+        })
+      },
+        
+      createCart : function(){ 
+  console.log(this.l)
+
+  
+       
+        var url = 'carts';
+        axios.post(url , {
+          precio: this.newPrecio,
+          cantidad: this.newCantidad
+
+        }).then(response => {
+          
+          this.newPrecio = '';
+          this.newCantidad = 1;
+          
+          
+          toastr.success('Se ha añadido', 'un nuevo producto a tu carrito');
           
 
 

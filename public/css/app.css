@@ -271,7 +271,7 @@ input[type=number] {
 }
 
 .product-grid6 .product-content {
-  padding: 12px 12px 15px;
+  padding: 50px 12px 15px;
   transition: all 0.5s ease 0s;
 }
 
@@ -334,14 +334,14 @@ input[type=number] {
   display: inline-block;
 }
 
-.product-grid6 .social li a {
+.product-grid6 .social li button {
   color: #909090;
   font-size: 16px;
   line-height: 45px;
   text-align: center;
   height: 45px;
   width: 45px;
-  margin: 0 7px;
+  margin: 0 14px;
   border: 1px solid #909090;
   border-radius: 50px;
   display: block;
@@ -349,16 +349,16 @@ input[type=number] {
   transition: all 0.3s ease-in-out;
 }
 
-.product-grid6 .social li a:hover {
+.product-grid6 .social li button:hover {
   color: #fff;
   background-color: #fed700;
   width: 80px;
 }
 
-.product-grid6 .social li a:after,
-.product-grid6 .social li a:before {
+.product-grid6 .social li button:after,
+.product-grid6 .social li button:before {
   content: attr(data-tip);
-  color: #fff;
+  color: white;
   background-color: #fed700;
   font-size: 12px;
   letter-spacing: 1px;
@@ -373,7 +373,7 @@ input[type=number] {
   top: -30px;
 }
 
-.product-grid6 .social li a:after {
+.product-grid6 .social li button:after {
   content: "";
   height: 15px;
   width: 15px;
@@ -383,8 +383,8 @@ input[type=number] {
   z-index: -1;
 }
 
-.product-grid6 .social li a:hover:after,
-.product-grid6 .social li a:hover:before {
+.product-grid6 .social li button:hover:after,
+.product-grid6 .social li button:hover:before {
   opacity: 1;
 }
 
@@ -437,10 +437,59 @@ img.pic-1 {
 }
 
 i.fa.fa-shopping-cart {
+  color: black;
+}
+
+i.fa.fa-shopping-cart:hover {
+  color: black;
+}
+
+.product-content-page i.fa.fa-shopping-cart {
   color: white;
 }
 
 /*Product Page .end */
+
+/* Cart */
+
+.site-header__cart-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  /* font-weight: bold; */
+  background-color: #feee00;
+  color: #000;
+  border-radius: 50%;
+  min-width: 1em;
+  height: 1em;
+}
+
+.site-header__account,
+.site-header__cart {
+  padding: 10px 11px;
+}
+
+li.nav-item.shopping__bag {
+  width: 17%;
+  padding-top: 1.2em;
+}
+
+.right-menu {
+  padding: 0.8em;
+}
+
+div#CartCount {
+  /* text-align: right; */
+  margin-left: 2em;
+  margin-top: -1.7em;
+}
+
+.newPrecio {
+  display: none;
+}
+
+/* Cart .end */
 
 /*!
  * Bootstrap v4.5.2 (https://getbootstrap.com/)

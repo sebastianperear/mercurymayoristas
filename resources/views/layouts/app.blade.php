@@ -21,6 +21,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link href="{{ asset('css/toastr.css') }}" rel="stylesheet">
+
     
 
     
@@ -69,7 +70,10 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
+
+                            
+
+                            <li class="nav-item dropdown right-menu account">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                    Hola, {{ Auth::user()->name }}
                                 </a>
@@ -94,6 +98,20 @@
                                     </form>
                                 </div>
                             </li>
+
+                            <li class="nav-item shopping__bag right-menu">
+            
+                                   <a href="/cart" class="site-header__icon site-header__cart">
+                          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cart" viewBox="0 0 37 40"><path d="M36.5 34.8L33.3 8h-5.9C26.7 3.9 23 .8 18.5.8S10.3 3.9 9.6 8H3.7L.5 34.8c-.2 1.5.4 2.4.9 3 .5.5 1.4 1.2 3.1 1.2h28c1.3 0 2.4-.4 3.1-1.3.7-.7 1-1.8.9-2.9zm-18-30c2.2 0 4.1 1.4 4.7 3.2h-9.5c.7-1.9 2.6-3.2 4.8-3.2zM4.5 35l2.8-23h2.2v3c0 1.1.9 2 2 2s2-.9 2-2v-3h10v3c0 1.1.9 2 2 2s2-.9 2-2v-3h2.2l2.8 23h-28z"></path></svg>
+                          
+                          <div id="CartCount" class="site-header__cart-count" data-cart-count-bubble="">
+                            <span data-cart-count="">1</span>
+                            
+                          </div>
+                        </a>  
+                            </li>
+
+                            
                         @endguest
                     </ul>
                 </div>
@@ -221,89 +239,91 @@
 
                 @include('tickets.create')
             </div>
-
             
+            
+            
+         
         </body>
-
-        <footer>
- <div class="container">
-   <div class="row">
-   
-            <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
-                <ul class="adress">
-                     <img src="/img/logo1.png" style="width:55%;"></img>    
-                     <li>
-                        <p class="footer-slogan">Los mejores productos, siempre</p>
-                      </li>
-                        <li>
-                          <span class="footer-subtitle">¿Necesitas ayuda?</span>
-                          <a href="#" class="btn btn-outline-success pull-left" data-toggle="modal" data-target="#create">
-                             Crear Ticket
-                          </a>
+      
+  <footer>
+   <div class="container">
+     <div class="row">
+     
+              <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
+                  <ul class="adress">
+                       <img src="/img/logo1.png" style="width:55%;"></img>    
+                       <li>
+                          <p class="footer-slogan">Los mejores productos, siempre</p>
                         </li>
-                        <li>
-                          
-                        </li>
-                      <br>
-                      <hr>
-                      <li>
-                        <p><i class="fa fa-phone" aria-hidden="true"></i>+57 321 304 8303</p>
-                      </li>
-                           
-                      <li>
-                        <p><i class="fa fa-envelope fa-1x"></i> hola@grupomercury.com.co</p>
-                      </li>
-                 </ul>
-            </div>
-            
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <ul class="contact">
-                     <span class="footer-title">Familias</span>    
-                     <li>
-                        <a href="#">Iluminación</a>
-                      </li>
-                           
-                      <li>
-                         <a href="#">Eléctricos</a>
-                      </li>
-                           
-                      <li>
-                        <a href="#">Innovación y tecnologia</a>
-                      </li>
-                           
-                      <li>
-                         <a href="#">Ferretería</a>
-                      </li>
-                           
-                      <li>
-                        <a href="#">Contact</a>
-                     </li>
-                </ul>
-            </div>
-       
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-               <ul class="social">
-                          <span class="footer-title">Síguenos en:</span>    
-                           <li>
-                                <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
-                           </li>
-                          
-                           
-                            
-                           <li>
-                                <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
-                           </li>
-
-                           <li>
-                                <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
+                          <li>
+                            <span class="footer-subtitle">¿Necesitas ayuda?</span>
+                            <a href="#" class="btn btn-outline-success pull-left" data-toggle="modal" data-target="#create">
+                               Crear Ticket
+                            </a>
                           </li>
-                          
-                 </ul>
-            </div>
-       
-       
-       </div> 
-    </div>
+                          <li>
+                            
+                          </li>
+                        <br>
+                        <hr>
+                        <li>
+                          <p><i class="fa fa-phone" aria-hidden="true"></i>+57 321 304 8303</p>
+                        </li>
+                             
+                        <li>
+                          <p><i class="fa fa-envelope fa-1x"></i> hola@grupomercury.com.co</p>
+                        </li>
+                   </ul>
+              </div>
+              
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                  <ul class="contact">
+                       <span class="footer-title">Familias</span>    
+                       <li>
+                          <a href="#">Iluminación</a>
+                        </li>
+                             
+                        <li>
+                           <a href="#">Eléctricos</a>
+                        </li>
+                             
+                        <li>
+                          <a href="#">Innovación y tecnologia</a>
+                        </li>
+                             
+                        <li>
+                           <a href="#">Ferretería</a>
+                        </li>
+                             
+                        <li>
+                          <a href="#">Contact</a>
+                       </li>
+                  </ul>
+              </div>
+         
+              <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                 <ul class="social">
+                            <span class="footer-title">Síguenos en:</span>    
+                             <li>
+                                  <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                             </li>
+                            
+                             
+                              
+                             <li>
+                                  <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+                             </li>
+
+                             <li>
+                                  <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
+                            </li>
+                            
+                   </ul>
+              </div>
+         
+         
+         </div> 
+      </div>
 
 </footer>
 <!-- Copyright -->

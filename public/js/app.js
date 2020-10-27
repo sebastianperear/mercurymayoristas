@@ -51775,11 +51775,15 @@ Vue.component('slide', __webpack_require__(/*! ./components/slide.vue */ "./reso
 
 var app = new Vue({
   el: '#app',
+  prop: ['l'],
   data: {
     tickets: [],
     newAsunto: '',
     newPrioridad: '',
-    newMensaje: ''
+    newMensaje: '',
+    carts: [],
+    newPrecio: '',
+    newCantidad: 1
   },
   methods: {
     createTicket: function createTicket() {
@@ -51796,6 +51800,20 @@ var app = new Vue({
         _this.newMensaje = '';
         $('#create').modal('hide');
         toastr.success('Pronto nos pondremos en contacto contigo', 'Se ha creado un nuevo ticket');
+      });
+    },
+    createCart: function createCart() {
+      var _this2 = this;
+
+      console.log(this.l);
+      var url = 'carts';
+      axios.post(url, {
+        precio: this.newPrecio,
+        cantidad: this.newCantidad
+      }).then(function (response) {
+        _this2.newPrecio = '';
+        _this2.newCantidad = 1;
+        toastr.success('Se ha añadido', 'un nuevo producto a tu carrito');
       });
     }
   }
