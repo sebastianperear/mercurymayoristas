@@ -20,9 +20,18 @@
                         </div>
                     </div>
                     <ul class="social add-to-cart">
-                          
-                        <li><a href="" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
+                                <li>
+                                 <div class="col-sm-5 qty">
+                                <div class="form-group">
+                                    <label for="qty">Cantidad</label>
+                                    <input class="qty-input form-control" type="number" value="1" name="cantidad" v-model="newCantidad"/>
+                                    
+                                </div>
+                              </div>
+
+                                   <li> <button  v-on:click="addCart({{($producto)}})" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></button></li>
+                                   
+                            </ul>
                 </div>
             </div>
              

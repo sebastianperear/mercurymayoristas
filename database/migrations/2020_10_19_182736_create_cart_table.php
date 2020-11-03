@@ -16,7 +16,7 @@ class CreateCartTable extends Migration
         Schema::create('carrito', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('identificacion')->unsigned()->index();
-            $table->integer('total')->unsigned()->index();
+            $table->string('Estado');
             $table->timestamps();
             $table->foreign('identificacion')->references('identificacion')->on('clientes')->onDelete('cascade');
             

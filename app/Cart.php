@@ -12,8 +12,8 @@ class Cart extends Model
         'total',
     ];
 
-    public function writer()
+    public function CartDet()
     {
-        return $this->belongsTo('App\CartDet', 'id_carrito');
+        return $this->belongsToMany('App\CartDet', 'id_carrito');
     }
 }

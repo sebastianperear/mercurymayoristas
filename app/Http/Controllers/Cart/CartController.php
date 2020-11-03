@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\cart;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Cart;
 use App\CartDet;
@@ -16,7 +17,21 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+        
+
+        $carts = DB::table('carrito')
+            ->join('carrito_det', 'carrito.id', '=', 'carrito_det.id_carrito')
+            ->select('carrito.*', 'carrito_det.cantidad', 'carrito_det.precio')
+            ->where('identificacion', auth()->user()->identificacion )
+             ->where('estado', 'En espera' )
+            ->get();
+
+
+
+
+            
+
+        return $carts;
     }
 
     /**
@@ -38,16 +53,40 @@ class CartController extends Controller
     public function store(Request $request)
     {
         
-        dd($request->all());
+        $carts = DB::table('carrito')
+            ->join('carrito_det', 'carrito.id', '=', 'carrito_det.id_carrito')
+            ->select('carrito.*', 'carrito_det.cantidad', 'carrito_det.precio')
+            ->where('identificacion', auth()->user()->identificacion )
+             ->where('estado', 'En espera' )
+            ->get();
 
-        $cart = new cart($request->all());
-        $cart->identificacion = auth()->user()->identificacion;
-        $cart->total = $request->precio * $request->cantidad;
-        $cart->save();
-        $cartdet = new cartdet($request->all());
-        $cartdet->id_producto = 1;
-        $cartdet->cantidad = $request->cantidad;
-        $cartdet->precio = $request->precio;
+            $carts_id = $carts->first();
+
+              
+            if (count($carts) > 0) {
+                $cart_det = new CartDet($request->all());
+                $cart_det->id_carrito = $carts_id->id;
+                $cart_det->id_producto = $request->id_producto;
+                $cart_det->save();
+            }
+
+            else{
+                $cart = new cart($request->all());
+                $cart->identificacion = auth()->user()->identificacion;
+                $cart->Estado = 'En espera';
+                $cart->save();
+
+                $cart_det = new CartDet($request->all());
+                $cart_det->id_carrito = $cart->id;
+                $cart_det->id_producto = $request->id_producto;
+                $cart_det->save();
+
+        
+            }
+   
+        
+        
+        
 
 
 

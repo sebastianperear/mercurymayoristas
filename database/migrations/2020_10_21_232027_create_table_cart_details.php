@@ -15,12 +15,13 @@ class CreateTableCartDetails extends Migration
     {
         Schema::create('carrito_det', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_carrito')->unsigned()->index();
+            $table->bigInteger('id_carrito')->unsigned()->index();
             $table->integer('id_producto')->unsigned()->index();
             $table->integer('cantidad');
             $table->bigInteger('precio');
             $table->timestamps();
             $table->foreign('id_producto')->references('id')->on('productos')->onDelete('cascade');
+            $table->foreign('id_carrito')->references('id')->on('carrito')->onDelete('cascade');
         });
     }
 

@@ -51775,16 +51775,18 @@ Vue.component('slide', __webpack_require__(/*! ./components/slide.vue */ "./reso
 
 var app = new Vue({
   el: '#app',
-  prop: ['l'],
+  created: function created() {
+    this.getCart();
+  },
   data: {
     tickets: [],
     newAsunto: '',
     newPrioridad: '',
     newMensaje: '',
     carts: [],
-    newPrecio: '',
     newCantidad: 1
   },
+  mounted: function mounted() {},
   methods: {
     createTicket: function createTicket() {
       var _this = this;
@@ -51802,19 +51804,48 @@ var app = new Vue({
         toastr.success('Pronto nos pondremos en contacto contigo', 'Se ha creado un nuevo ticket');
       });
     },
-    createCart: function createCart() {
+    getCart: function getCart() {
       var _this2 = this;
 
-      console.log(this.l);
-      var url = 'carts';
-      axios.post(url, {
-        precio: this.newPrecio,
-        cantidad: this.newCantidad
-      }).then(function (response) {
-        _this2.newPrecio = '';
-        _this2.newCantidad = 1;
-        toastr.success('Se ha añadido', 'un nuevo producto a tu carrito');
+      var urlCarts = 'http://127.0.0.1:8000/carts'; // Change url in prod
+
+      axios.get(urlCarts).then(function (response) {
+        if (response.data.length > 0) {
+          // get sum of msgCount prop across all objects in array
+          var count = response.data.reduce(function (prev, cur) {
+            return prev + cur.cantidad;
+          }, 0);
+          _this2.carts = count;
+          console.log(_this2.carts);
+        } else {
+          _this2.carts = 0;
+        }
       });
+    },
+    addCart: function addCart(item) {
+      var _this3 = this;
+
+      var itemcar = {
+        id: item.id,
+        nombre: item.nombre,
+        precio: item.precio_base,
+        code: item.codigo
+      };
+      var url = 'http://127.0.0.1:8000/carts'; //Change url in prod
+
+      axios.post(url, {
+        precio: itemcar.precio,
+        cantidad: this.newCantidad,
+        id_producto: itemcar.id
+      }).then(function (response) {
+        toastr.success(+_this3.newCantidad + '' + ' articulos al carrito', 'Se han añadido');
+        _this3.newCantidad = 1;
+
+        _this3.getCart();
+
+        console.log(itemcar.nombre);
+      }); // this.listCarrito.push(itemcar)
+      // alert(JSON.stringify(item))
     }
   }
 });

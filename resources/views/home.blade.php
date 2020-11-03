@@ -29,24 +29,24 @@
                             </div>
                         </div>
                          
-                        <form method="POST" v-on:submit.prevent="createCart">
+                        
                             <ul class="social add-to-cart">
                                 <li>
                                  <div class="col-sm-5 qty">
                                 <div class="form-group">
                                     <label for="qty">Cantidad</label>
                                     <input class="qty-input form-control" type="number" value="1" name="cantidad" v-model="newCantidad"/>
-                                    <input type="text" class="newPrecio"  min="1"  id="fname" name="precio"      v-model="newPrecio"   />
-                                    
-                                   <p v-bind:l="12"></p>
                                     
                                 </div>
                               </div>
 
-
-                                   <li> <button type="submit" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></button></li>
+                                   <li> <button  v-on:click="addCart({{($producto)}})" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></button></li>
+                                   
                             </ul>
-                        </form>
+                        
+
+
+
                     </div>
                 </div>
 
@@ -111,5 +111,9 @@
         
       
     
+
+@endsection
+@section('js')
+
 
 @endsection
