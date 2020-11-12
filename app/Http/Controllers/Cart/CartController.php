@@ -41,7 +41,7 @@ class CartController extends Controller
              ->where('carrito.estado', 'En espera' )
              ->groupBy('id')
              ->get();
-
+         
         $totalcarrito = DB::table('carrito_det')
             ->join('carrito', 'carrito.id', '=', 'carrito_det.id_carrito')
 
@@ -62,8 +62,10 @@ class CartController extends Controller
 
              if (!$carritos->isEmpty()) {
                return view('cart.view')
-              ->with('carritos',$carritos)
-              ->with('totalcarrito', $totalcarrito);
+               ->with('carritos',$carritos)
+               ->with('totalcarrito', $totalcarrito);
+
+               
            }
          else{
             return view('cart.nothing');
@@ -71,7 +73,7 @@ class CartController extends Controller
          } 
       
             
-              
+             
       
     }
 
@@ -81,6 +83,11 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
+    {
+        //
+    }
+
+    public function get()
     {
         //
     }
@@ -173,6 +180,7 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cart = DB::table('carrito_det')->where('id_producto', $id);
+        $cart->delete();
     }
 }

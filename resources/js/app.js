@@ -40,6 +40,8 @@ const app = new Vue({
 
     created: function(){
        this.getCart();
+       this.getCartPage();
+
     },
       data: {
 
@@ -51,13 +53,13 @@ const app = new Vue({
 
       carts: [],
       newCantidad: 1,
+      cart: [],
       
 
     },
 
     mounted(){
      
-
     },
 
 
@@ -115,8 +117,32 @@ methods:{
 
       },
 
+      getCartPage: function (){
+        var urlCartPage = 'cart';
+        axios.get(urlCartPage).then(response =>{
 
-     
+          this.cart = response.data;
+
+          
+
+          
+
+
+         }
+          )
+      },
+
+
+     removefromCart: function(carrito){
+        var url = '/cart/' + carrito + '/remove';
+        axios.delete(url).then(response => {
+
+              this.getCartPage();
+
+        } );
+      alert(carrito);
+
+     }, 
 
       addCart(item){
 

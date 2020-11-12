@@ -508,6 +508,126 @@ div#CartCount {
   padding: 5em;
 }
 
+.separator {
+  border-top: 2px solid #FED700;
+}
+
+.separator2 {
+  border-top: 2px solid #FED700;
+  width: 50%;
+}
+
+.table .thead-dark th {
+  color: #fff;
+  background-color: #12386f !important;
+  border-color: #12386f;
+}
+
+h4.cart-total {
+  color: #12386f;
+}
+
+.table_cart {
+  -webkit-box-shadow: 2px 2px 5px #999;
+  -moz-box-shadow: 2px 2px 5px #999;
+  filter: shadow(color=#999999, direction=135, strength=2);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: transparent;
+}
+
+.cart__row {
+  border-bottom: 1px solid #e8e9eb;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+.cart td:first-child,
+.cart th:first-child {
+  padding-left: 0;
+}
+
+.cart td {
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  border-spacing: 2px;
+  border-color: grey;
+}
+
+.cart__product-title {
+  border-bottom: none;
+}
+
+.list-view-item__title {
+  color: #3d4246;
+  font-size: 1.13333em;
+  min-width: 100px;
+}
+
+.cart__image {
+  margin-right: 2em;
+  width: 120px;
+  height: 120px;
+}
+
+.cart__title-column {
+  font-size: 1.2em;
+  color: #12386f;
+}
+
+span.cart__product-name a {
+  color: #12386f;
+}
+
+span.cart__product-name a:hover {
+  color: #FED701;
+  text-decoration: none;
+}
+
+th.cart__title-column {
+  padding-right: 1.5em;
+  padding-bottom: 1em;
+}
+
+div#app {
+  background-color: white;
+}
+
+.cart__remove-button {
+  color: #12386f;
+  border-color: #ffed4a;
+  border: 1px solid;
+  padding: 5px;
+}
+
+.cart__remove-button:hover {
+  color: #212529;
+  background-color: #ffed4a;
+  border-color: #ffed4a;
+  text-transform: none;
+  border: 1px solid;
+}
+
 /* Cart .end */
 
 /* Categories */
@@ -516,6 +636,7 @@ div#CartCount {
   text-align: center;
   padding-top: 1em;
   padding-bottom: 1em;
+  color: #12386f;
 }
 
 /* Categories end */

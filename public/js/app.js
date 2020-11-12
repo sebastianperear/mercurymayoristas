@@ -51777,6 +51777,7 @@ var app = new Vue({
   el: '#app',
   created: function created() {
     this.getCart();
+    this.getCartPage();
   },
   data: {
     tickets: [],
@@ -51784,7 +51785,8 @@ var app = new Vue({
     newPrioridad: '',
     newMensaje: '',
     carts: [],
-    newCantidad: 1
+    newCantidad: 1,
+    cart: []
   },
   mounted: function mounted() {},
   methods: {
@@ -51821,8 +51823,25 @@ var app = new Vue({
         }
       });
     },
-    addCart: function addCart(item) {
+    getCartPage: function getCartPage() {
       var _this3 = this;
+
+      var urlCartPage = 'cart';
+      axios.get(urlCartPage).then(function (response) {
+        _this3.cart = response.data;
+      });
+    },
+    removefromCart: function removefromCart(carrito) {
+      var _this4 = this;
+
+      var url = '/cart/' + carrito + '/remove';
+      axios["delete"](url).then(function (response) {
+        _this4.getCartPage();
+      });
+      alert(carrito);
+    },
+    addCart: function addCart(item) {
+      var _this5 = this;
 
       console.log(item);
       var itemcar = {
@@ -51838,10 +51857,10 @@ var app = new Vue({
         cantidad: this.newCantidad,
         id_producto: itemcar.id
       }).then(function (response) {
-        toastr.success(+_this3.newCantidad + '' + ' articulos al carrito', 'Se han añadido');
-        _this3.newCantidad = 1;
+        toastr.success(+_this5.newCantidad + '' + ' articulos al carrito', 'Se han añadido');
+        _this5.newCantidad = 1;
 
-        _this3.getCart();
+        _this5.getCart();
 
         console.log(itemcar.nombre);
       }); // this.listCarrito.push(itemcar)

@@ -25,8 +25,12 @@ Route::resource('/tickets', 'TicketsController', ['except' => 'show', 'create', 
 
 // Cart
 Route::resource('/carts', 'Cart\CartController', ['except' => 'show', 'create', 'edit']);
-
+//Cart page return to view
 Route::get('/cart', 'Cart\CartController@view')->name('cart');
+//Cart page remove items
+Route::delete('/cart/{id}/remove', 'Cart\CartController@destroy')->name('cart.delete');
+
+
 
 // Products
 Route::get('/categoria/{categoria}/{subcategoria}', 'Products\CategoryController@index')->name('category');
@@ -36,3 +40,6 @@ Route::get('/productos/{id}/{nombre}', 'Products\ProductController@view')->name(
 
 
 
+
+
+	
