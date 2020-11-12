@@ -51816,7 +51816,6 @@ var app = new Vue({
             return prev + cur.cantidad;
           }, 0);
           _this2.carts = count;
-          console.log(_this2.carts);
         } else {
           _this2.carts = 0;
         }
@@ -51825,10 +51824,11 @@ var app = new Vue({
     addCart: function addCart(item) {
       var _this3 = this;
 
+      console.log(item);
       var itemcar = {
         id: item.id,
         nombre: item.nombre,
-        precio: item.precio_base,
+        precio: item.precio,
         code: item.codigo
       };
       var url = 'http://127.0.0.1:8000/carts'; //Change url in prod

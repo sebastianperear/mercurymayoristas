@@ -13,6 +13,20 @@ class CreateProductosTable extends Migration
      */
     public function up()
     {
+        Schema::create('categoria', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre');
+            $table->timestamps();
+        });
+        Schema::create('subcategoria', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre');
+            $table->bigInteger('id_categoria')->unsigned()->index();
+            $table->timestamps();
+            $table->foreign('id_categoria')->references('id')->on('categoria')->onDelete('cascade');  
+        });
+
+
         Schema::create('productos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codigo');
@@ -25,11 +39,13 @@ class CreateProductosTable extends Migration
             $table->string('estado');
             $table->integer('unidad_maxima');
             $table->string('url_img');
-            $table->string('categoria');
-            $table->string('subcategoria');
+            $table->bigInteger('id_categoria')->unsigned()->index();
+            $table->bigInteger('id_subcategoria')->unsigned()->index();
             $table->integer('carruselhome1')->nulled();
             $table->integer('carruselhome2')->nulled();
             $table->timestamps();
+            $table->foreign('id_categoria')->references('id')->on('categoria')->onDelete('cascade');
+            $table->foreign('id_subcategoria')->references('id')->on('subcategoria')->onDelete('cascade');        
         });
     }
 
@@ -40,6 +56,8 @@ class CreateProductosTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('categoria');
+        Schema::dropIfExists('subcategoria');
         Schema::dropIfExists('productos');
     }
 }

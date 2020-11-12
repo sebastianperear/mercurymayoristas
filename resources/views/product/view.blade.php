@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-sm-7">
                     <div class="product-image">
-                            <img class="pic-1" src="../..{{ $producto->url_img }}">
+                            <img class="pic-1" src="/..{{ $producto->url_img }}">
                     </div>  
 
     </div>
@@ -15,7 +15,7 @@
       <div class="product-content-page">
                         <h2 class="product-title-page"><strong>{{ $producto->nombre}}</strong></h2>
                         <p>Código: {{ $producto->codigo}}</p>
-                        @if($producto->estado == 'DISPONIBLE')
+                        @if($producto->estado == 'Disponible')
                             <p class="text-success"><i class="fa fa-check-circle-o text-success" aria-hidden="true"></i> Disponible</p>
                         @endif
 
@@ -24,7 +24,7 @@
                             <p>{{ $producto->descripción}}</p>
                         </div>
                         <div class="price-page">
-                            <p><strong>${{ number_format($producto->precio_base, 0, ',','.') }}</strong></p>
+                            <p><strong>${{ number_format($precio3, 0, ',','.') }}</strong></p>
                         </div>
 
                         

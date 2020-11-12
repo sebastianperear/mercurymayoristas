@@ -343,6 +343,33 @@ div#CartCount {
     display:none;
 }
 
+.cart{
+
+    padding-top:1em;
+    padding-bottom: 4em !important;
+}
+
+.cart-title{
+    text-align: center;
+}
+
+.cart-total{
+    text-align: right;
+}
+
+.cart-nothing-title{
+
+    text-align: center;
+    font-size: 1.5em;
+    padding: 5em;
+}
+
 /* Cart .end */
 
-
+/* Categories */
+ .category-title{
+   text-align: center;
+   padding-top: 1em;
+   padding-bottom: 1em;
+ }
+/* Categories end */

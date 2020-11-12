@@ -26,12 +26,53 @@ class CartController extends Controller
              ->where('estado', 'En espera' )
             ->get();
 
-
-
-
-            
-
         return $carts;
+    }
+
+    public function view()
+    {
+
+        $carritos = DB::table('productos')
+            ->join('carrito_det', 'productos.id', '=', 'carrito_det.id_producto')
+            ->join('carrito', 'carrito.id', '=', 'carrito_det.id_carrito')
+            
+            ->select('productos.*', 'carrito_det.cantidad', 'carrito_det.precio', DB::raw("SUM(carrito_det.cantidad) as cant,  carrito_det.precio * SUM(carrito_det.cantidad) as total"))
+            ->where('identificacion', auth()->user()->identificacion )
+             ->where('carrito.estado', 'En espera' )
+             ->groupBy('id')
+             ->get();
+
+        $totalcarrito = DB::table('carrito_det')
+            ->join('carrito', 'carrito.id', '=', 'carrito_det.id_carrito')
+
+            ->select('carrito_det.*', DB::raw("SUM(carrito_det.cantidad) as cant_total, SUM(precio * cantidad) as gran_total"))
+            ->where('carrito.identificacion', auth()->user()->identificacion )
+             ->where('carrito.estado', 'En espera' )
+             ->groupBy('carrito.id')
+             ->get()->first();
+
+           
+        // $carrito = DB::table('carrito')
+        //     ->join('carrito_det', 'carrito.id', '=', 'carrito_det.id_carrito')
+        //     ->join('productos', 'carrito_det.id_producto', '=', 'productos.id')
+        //     ->select('carrito.*', 'carrito_det.cantidad', 'carrito_det.precio', 'productos.nombre')
+        //     ->where('identificacion', auth()->user()->identificacion )
+        //      ->where('carrito.estado', 'En espera' )
+        //     ->get();
+
+             if (!$carritos->isEmpty()) {
+               return view('cart.view')
+              ->with('carritos',$carritos)
+              ->with('totalcarrito', $totalcarrito);
+           }
+         else{
+            return view('cart.nothing');
+
+         } 
+      
+            
+              
+      
     }
 
     /**
@@ -58,12 +99,15 @@ class CartController extends Controller
             ->select('carrito.*', 'carrito_det.cantidad', 'carrito_det.precio')
             ->where('identificacion', auth()->user()->identificacion )
              ->where('estado', 'En espera' )
+             
             ->get();
-
+             
             $carts_id = $carts->first();
+
 
               
             if (count($carts) > 0) {
+                 
                 $cart_det = new CartDet($request->all());
                 $cart_det->id_carrito = $carts_id->id;
                 $cart_det->id_producto = $request->id_producto;
@@ -84,14 +128,6 @@ class CartController extends Controller
         
             }
    
-        
-        
-        
-
-
-
-        
-
         return;
     }
 

@@ -4,6 +4,7 @@
 @section('content')
 
     <div class="container">
+        <h2 class="category-title">{{ $subcategoria}}</h2>
         <div class="row product">
             @foreach ($productos as $producto)
             <div class="col-md-3 col-sm-6">
@@ -16,7 +17,7 @@
                     <div class="product-content">
                         <h3 class="title">
                             <a href="../../productos/{{ $producto->id}}/{{ $producto->nombre}}">{{ $producto->nombre}}</a></h3>
-                        <div class="price">${{ number_format($producto->precio_base, 0, ',','.') }}
+                        <div class="price">${{ number_format($producto->precio, 0, ',','.') }}
                         </div>
                     </div>
                     <ul class="social add-to-cart">
@@ -29,7 +30,7 @@
                                 </div>
                               </div>
 
-                                   <li> <button  v-on:click="addCart({{($producto)}})" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></button></li>
+                                   <li> <button  v-on:click="addCart({{json_encode($producto)}})" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></button></li>
                                    
                             </ul>
                 </div>

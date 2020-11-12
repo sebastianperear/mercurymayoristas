@@ -11,44 +11,43 @@
    <div class="container">
         <h2 class="product-title"><strong>Los más vendidos</strong></h2><br>
         <div class="row product">
-            
-                @foreach ($productos as $producto)
+            @foreach ($productos as $producto)
                  @if($producto->carruselhome1)
-                <div class="col-md-3 col-sm-6">
-                    <div class="product-grid6">
-                        <div class="product-image6">
-                            <a href="productos/{{ $producto->id}}/{{ $producto->nombre}}">
-                                <img class="pic-1" src="{{ $producto->url_img }}">
-                            </a>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title">
-                               <a href="productos/{{ $producto->id}}/{{ $producto->nombre}}">{{ $producto->nombre}}</a>
-                            </h3>
-                            <div class="price">${{ number_format($producto->precio_base) }}
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-grid6">
+                            <div class="product-image6">
+                                <a href="productos/{{ $producto->id}}/{{ $producto->nombre}}">
+                                    <img class="pic-1" src="{{ $producto->url_img }}">
+                                </a>
                             </div>
-                        </div>
-                         
-                        
-                            <ul class="social add-to-cart">
-                                <li>
-                                 <div class="col-sm-5 qty">
-                                <div class="form-group">
-                                    <label for="qty">Cantidad</label>
-                                    <input class="qty-input form-control" type="number" value="1" name="cantidad" v-model="newCantidad"/>
-                                    
+                            <div class="product-content">
+                                <h3 class="title">
+                                   <a href="productos/{{ $producto->id}}/{{ $producto->nombre}}">{{ $producto->nombre}}</a>
+                                </h3>
+                                <div class="price">${{ number_format($producto->precio) }}
                                 </div>
-                              </div>
+                            </div>
+                             
+                            
+                                <ul class="social add-to-cart">
+                                    <li>
+                                     <div class="col-sm-5 qty">
+                                    <div class="form-group">
+                                        <label for="qty">Cantidad</label>
+                                        <input class="qty-input form-control" type="number" value="1" name="cantidad" v-model="newCantidad"/>
+                                        
+                                    </div>
+                                  </div>
+                                       <li> 
+                                        <button  v-on:click="addCart({{ json_encode($producto)}})" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></button></li>
+                                       
+                                </ul>
+                            
 
-                                   <li> <button  v-on:click="addCart({{($producto)}})" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></button></li>
-                                   
-                            </ul>
-                        
 
 
-
+                        </div>
                     </div>
-                </div>
 
                  @endif
                 @endforeach
@@ -70,42 +69,43 @@
         </div>
 
         <h2 class="product-title"><strong>Destacados</strong></h2><br>
-        <div class="row product">
+         <div class="row product">
             @foreach ($productos as $producto)
-             @if($producto->carruselhome2)
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid6">
-                    <div class="product-image6">
-                        <a href="productos/{{ $producto->id}}/{{ $producto->nombre}}">
-                            <img class="pic-1" src="{{ $producto->url_img }}">
-                        </a>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title">
-                           <a href="productos/{{ $producto->id}}/{{ $producto->nombre}}">{{ $producto->nombre}}</a>
-                        </h3>
-                        <div class="price">${{ number_format($producto->precio_base) }}
+                 @if($producto->carruselhome2)
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-grid6">
+                            <div class="product-image6">
+                                <a href="productos/{{ $producto->id}}/{{ $producto->nombre}}">
+                                    <img class="pic-1" src="{{ $producto->url_img }}">
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title">
+                                   <a href="productos/{{ $producto->id}}/{{ $producto->nombre}}">{{ $producto->nombre}}</a>
+                                </h3>
+                                <div class="price">${{ number_format($producto->precio) }}
+                                </div>
+                            </div>
+                             
+                            
+                                <ul class="social add-to-cart">
+                                    <li>
+                                     <div class="col-sm-5 qty">
+                                    <div class="form-group">
+                                        <label for="qty">Cantidad</label>
+                                        <input class="qty-input form-control" type="number" value="1" name="cantidad" v-model="newCantidad"/>
+                                        
+                                    </div>
+                                  </div>
+                                       <li> 
+                                        <button  v-on:click="addCart({{ json_encode($producto)}})" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></button></li>   
+                                </ul>
+                            
                         </div>
                     </div>
-                    
-                        <ul class="social add-to-cart">
-                            <li>
-                             <div class="col-sm-5 qty">
-                            <div class="form-group">
-                                <label for="qty">Cantidad</label>
-                                <input class="qty-input form-control" type="number" value="1" name="qty" />
-                            </div>
-                          </div>
-                                <a href="" data-tip="Añadir al carrito"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
 
-                        
-                    
-                </div>
-            </div>
-             @endif
-            @endforeach
-            
+                 @endif
+                @endforeach
         </div>
     </div>
         

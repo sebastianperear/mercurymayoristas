@@ -56,7 +56,7 @@ const app = new Vue({
     },
 
     mounted(){
-
+     
 
     },
 
@@ -102,9 +102,6 @@ methods:{
               
               this.carts = count;
 
-              console.log(this.carts);
-              
-              
            }
            else {
               this.carts = 0
@@ -118,14 +115,17 @@ methods:{
 
       },
 
+
+     
+
       addCart(item){
 
-          
+           console.log(item);
 
             const itemcar = {
               id : item.id,
               nombre : item.nombre,
-              precio: item.precio_base,
+              precio: item.precio,
               code: item.codigo,
             }
             

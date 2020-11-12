@@ -22,8 +22,17 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/tickets', 'TicketsController', ['except' => 'show', 'create', 'edit']);
+
+// Cart
 Route::resource('/carts', 'Cart\CartController', ['except' => 'show', 'create', 'edit']);
+
+Route::get('/cart', 'Cart\CartController@view')->name('cart');
+
+// Products
 Route::get('/categoria/{categoria}/{subcategoria}', 'Products\CategoryController@index')->name('category');
 Route::get('/productos/{id}/{nombre}', 'Products\ProductController@view')->name('product');
+
+
+
 
 
